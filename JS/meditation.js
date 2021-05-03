@@ -1,42 +1,39 @@
-const song = document.querySelector(".song");
+const AudioTrack = document.querySelector(".AudioTrack");
 const play = document.querySelector(".play");
 const replay = document.querySelector(".replay");
-const outline = document.querySelector(".moving-outline circle");
-//Sounds
-const sounds = document.querySelectorAll(".sound-picker button");
-//Time Display
+const Fill = document.querySelector(".circle-fill circle");
+const MeditationTrack = document.querySelectorAll(".audio-picker button");
 const timeDisplay = document.querySelector(".time-display");
-const outlineLength = outline.getTotalLength();
-//Duration
+const FillColour = Fill.getTotalLength();
 const timeSelect = document.querySelectorAll(".time-select button");
 let fakeDuration = 600;
 
-outline.style.strokeDashoffset = outlineLength;
-outline.style.strokeDasharray = outlineLength;
+Fill.style.strokeDashoffset = FillColour;
+Fill.style.strokeDasharray = FillColour;
 timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(
   fakeDuration % 60
 )}`;
 
-sounds.forEach(sound => {
-  sound.addEventListener("click", function() {
-    song.src = this.getAttribute("data-sound");
-    checkPlaying(song);
+MeditationTrack.forEach(track => {
+  track.addEventListener("click", function() {
+    AudioTrack.src = this.getAttribute("data-sound");
+    checkPlaying(AudioTrack);
   });
 });
 
 play.addEventListener("click", function() {
-  checkPlaying(song);
+  checkPlaying(AudioTrack);
 });
 
 replay.addEventListener("click", function() {
-    restartSong(song);
+    restartAudio(AudioTrack);
     
   });
 
 
-const restartSong = song =>{
-    let currentTime = song.currentTime;
-    song.currentTime = 0;
+const restartAudio = AudioTrack =>{
+    let currentTime = AudioTrack.currentTime;
+    AudioTrack.currentTime = 0;
     console.log("restart")
 
 }
@@ -50,28 +47,28 @@ timeSelect.forEach(option => {
   });
 });
 
-const checkPlaying = song => {
-  if (song.paused) {
-    song.play();
+const checkPlaying = AudioTrack => {
+  if (AudioTrack.paused) {
+    AudioTrack.play();
     play.src = "icons/pause.svg";
   } else {
-    song.pause();
+    AudioTrack.pause();
     play.src = "icons/play.svg";
   }
 };
 
-song.ontimeupdate = function() {
-  let currentTime = song.currentTime;
+AudioTrack.ontimeupdate = function() {
+  let currentTime = AudioTrack.currentTime;
   let elapsed = fakeDuration - currentTime;
   let seconds = Math.floor(elapsed % 60);
   let minutes = Math.floor(elapsed / 60);
   timeDisplay.textContent = `${minutes}:${seconds}`;
-  let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
-  outline.style.strokeDashoffset = progress;
+  let progress = FillColour - (currentTime / fakeDuration) * FillColour;
+  Fill.style.strokeDashoffset = progress;
 
   if (currentTime >= fakeDuration) {
-    song.pause();
-    song.currentTime = 0;
+    AudioTrack.pause();
+    AudioTrack.currentTime = 0;
     play.src = "./svg/play.svg";
 
   }

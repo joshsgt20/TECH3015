@@ -892,7 +892,7 @@ align-items: center;
       font-size: 1.4rem;
     }
     section {
-      padding: 5vh 8vw;
+      padding: 5vh 10vw;
     }
 
 
@@ -1045,7 +1045,7 @@ align-items: center;
   /* Desktop Screen size */
   @media screen and (min-width: 1650px) {
     section {
-      padding: 8vh 15vw;
+      padding: 8vh 13vw;
     }
 
     .Welcome{

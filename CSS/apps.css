@@ -17,12 +17,12 @@
   color: white;
 }
 
-.app-title{
+.WeatherTitle{
     width: 100%;
     min-height: 5vh;
 }
 
-.app-title h2, .WeatherContainer h2{
+.WeatherTitle h2, .WeatherContainer h2{
     text-align: center;
     padding: 2vh;
     margin: 0 auto;
@@ -31,12 +31,12 @@
     
 }
 
-.notification{
+.Unsupported{
     background-color: #f8d7da;
     display: none;
 }
 
-.notification p{
+.Unsupported p{
     color: #721c24;
     font-size: 1.2em;
     margin: 0;
@@ -50,24 +50,24 @@
     background-color: #F4F9FF;
 }
 
-.weather-icon{
+.WeatherIcon{
     width: 90%;
     min-height: 5vh;
     margin: 0 auto;
 }
 
-.weather-icon img{
+.WeatherIcon img{
     display: block;
     margin: 0 auto;
 }
 
-.temperature-value{
+.TempValue{
     width: 100%;
 
 
 }
 
-.temperature-value p{
+.TempValue p{
     padding: 0;
     margin: 0;
     color: #3e4c65;
@@ -78,13 +78,13 @@
 
 
 
-.temperature-value span{
+.TempValue span{
     color: #3e4c65;
     font-size: 0.5em;
 }
 
 
-.temperature-description p{
+.TempDisplay p{
     margin: 0;
     color: #3e4c65;
     text-align: center;
@@ -115,7 +115,7 @@
     justify-content: center;
     align-items: center;
 }
-#start{
+#StartSurvey{
     width:80%;
     border : 0.5vh solid #f2958c;
     text-align: center;
@@ -130,48 +130,46 @@
     transition: 0.3s;
 }
     
-#start:hover{
+#StartSurvey:hover{
     background-color: white;
     transition: 0.3s;
     color: #f2958c;
     transform: scale(1.03);
 }
 
-#qImg{
+#QuestionImage{
     width : 70%;
     height : auto;
     object-fit: cover;
     margin: 2vh 0vw 2vh 15%;
     border-radius: 4%;
+    background-color: #f2958c;
+    border-radius: 50%;
+    
 
 }
 
 
 
-#qImg img{
+#QuestionImage img{
     width : 100%;
     min-height : 15vh;
     border-top-left-radius: 5px;
     object-fit: cover;
     border-radius: 4%;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.329), 0px 0px 10px rgba(0, 0, 0, 0.247);
+
 }
 
 #question{
-    width:90%;
+    width:100%;
     color: white;
     text-align: center;
-    margin: 2vh 0vw 2vh 5%;
+    margin: 2vh 0vw 2vh 0%;
 
  
 }
 
-#question p{
-    margin : 0;
 
-  
-
-}
 
 #choices{
     width : 100%;
@@ -204,7 +202,7 @@
     transition: 0.3s;
 }
 
-#quiz{
+#Survey{
   display: flex;
   justify-content: center;
   margin: 0;
@@ -214,7 +212,7 @@
 }
 
 
-#progress{
+#SurveyProgress{
     width : 100%;
     display: flex;
     justify-content: center;
@@ -222,7 +220,7 @@
 
 }
 
-.prog{
+.Progress{
     width : 2.5rem;
     height : 2.5rem;
     border: 1px solid #000;
@@ -231,28 +229,21 @@
     margin: 5vh 2vw 0 2vw;
     
 }
-#scoreContainer{
+#SurveyOutcome{
     background-color: #3e4c65;
     height: 100%;
     width : 100%;
-    position: relative;
     display: none;
     color: white;
     align-items: center;
     position: absolute;
+    justify-content: center;
 
 }
-#scoreContainer img{
-    position: absolute;
-    top: 50%;
-    left:50%;;
-    width: 20%;
-}
-#scoreContainer p{
-    position: absolute;
-    display: block;
-    top: 70%;
-    left:50%;
+
+#SurveyOutcome p{
+    display: flex;
+    margin: 20vh 0 0 0;
     font-size: 1.5em;
     font-weight: bold;
     text-align: center;
@@ -371,10 +362,11 @@
     height: auto;
     background-color: #f2958c;
     display: flex;
+
   }
   
   .time-select{
-    width: 100vw;
+    width: 95vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -383,7 +375,7 @@
     flex-direction: column;
   }
 
-  .sound-picker {
+  .audio-picker {
     display: flex;
     justify-content: space-evenly;
     flex: 1;
@@ -395,7 +387,7 @@
 
 
   .time-select button,
-  .sound-picker button {
+  .audio-picker button {
     color: black;
     background: none;
     border-radius: 5%;
@@ -416,31 +408,31 @@
   }
  
 
-  .sound-picker button {
+  .audio-picker button {
     border: none;
     height: 8rem;
     width: 8rem;
     padding: 1rem;
     border-radius: 50%;
   }
-  .sound-picker button:nth-child(1) {
+  .audio-picker button:nth-child(1) {
     background: #4972a1;
 
   }
-  .sound-picker button:nth-child(2) {
+  .audio-picker button:nth-child(2) {
     background: #a14f49;
   }
 
-  .sound-picker button:nth-child(1):hover {
+  .audio-picker button:nth-child(1):hover {
     background: #1c416b;
     transform: scale(1.05);
 
   }
-  .sound-picker button:nth-child(2):hover {
+  .audio-picker button:nth-child(2):hover {
     background: #83302a;
     transform: scale(1.05);
   }
-  .sound-picker button img {
+  .audio-picker button img {
     height: 5rem;
   }
   
@@ -570,7 +562,6 @@
   }
   
   .todo-list {
-    min-width: 30%;
     list-style: none;
     
   }
@@ -637,7 +628,7 @@
     pointer-events: none;
   }
   
-  .fall {
+  .fallanimation {
     transform: translateY(10rem) rotateZ(20deg);
     opacity: 0;
   }
@@ -647,7 +638,7 @@
     opacity: 0.5;
   }
   
-  /*CUSTOM SELECTOR */
+
   select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -660,20 +651,20 @@
   }
   
   /* Custom Select */
-  .select {
+  .FilterToDoList {
     margin: 1rem;
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.329), 0px 0px 10px rgba(0, 0, 0, 0.247);
   }
-  select {
+  .FilterToDoList select {
     color: #3e4c65;
     font-family: "Poppins", sans-serif;
     cursor: pointer;
     width: 12rem;
   }
   /* Arrow */
-  .select::after {
+  .FilterToDoList::after {
     content: "\25BC";
     position: absolute;
     top: 0;
@@ -711,21 +702,17 @@
 
 
 
-  .sound-picker button {
+  .audio-picker button {
     height: 10rem;
     width: 10rem;
 
   }
 
-  .sound-picker button img {
+  .audio-picker button img {
     height: 6rem;
   }
   
  
-  .time-display {
-   top: 35%
-  
-  }
 
 
 .WeatherGrid{
@@ -742,24 +729,19 @@
 
 
 
-#qImg{
-  width : 95%;
-  margin: 0;
+#QuestionImage{
+  width : 80%;
+  margin: 0 0 0 10%;
 
 
 }
 
 
-#qImg img{
-  width : 100%;
-  border-top-left-radius: 5px;
-  object-fit: cover;
-  border-radius: 4%;
-}
 
 #question{
-  width:100%;
-  margin: 0;
+  width:90%;
+  margin: 0 0 0 2vw;
+  text-align: left;
 
 
 
@@ -787,12 +769,12 @@ align-items: center;
   .time-select button{
     width: 26%;
     margin: 1vw;
-    padding: 1vh 3vw 1vh 3vw;
+    padding: 1vh 1vw 1vh 1vw;
   }
 
  
   .time-display {
-   top: 40%
+   top: 30%
   
   }
 
@@ -820,7 +802,15 @@ align-items: center;
 
 
 .time-display {
- top: 40%
+ top: 30%
+
+}
+
+#QuestionImage{
+  width : 60%;
+  margin: 2vh 0vw 2vh 20%;
+  border-radius: 50%;
+  
 
 }
 
@@ -836,21 +826,23 @@ align-items: center;
 
 
 
-
-  .sound-picker button {
+  .audio-picker button {
     height: 12rem;
     width: 12rem;
 
   }
 
-  .sound-picker button img {
+  .audio-picker button img {
     height: 7rem;
   }
   
  
   .time-display {
-   top: 50%
+   top: 25%
   
   }
+
+
+
 
 }

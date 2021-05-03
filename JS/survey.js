@@ -1,99 +1,87 @@
 
-
 // SURVEY PAGE
-
-
-// select all elements
-const start = document.getElementById("start");
-const quiz = document.getElementById("quiz");
+const StartSurvey = document.getElementById("StartSurvey");
+const Survey = document.getElementById("Survey");
 const question = document.getElementById("question");
-const qImg = document.getElementById("qImg");
+const QuestionImage = document.getElementById("QuestionImage");
 const choiceA = document.getElementById("A");
 const choiceB = document.getElementById("B");
-const choiceC = document.getElementById("C");
-const progress = document.getElementById("progress");
-const scoreDiv = document.getElementById("scoreContainer");
+const SurveyProgress = document.getElementById("SurveyProgress");
+const Outcome = document.getElementById("SurveyOutcome");
 
-// create our questions
+
 let questions = [
     {
-        question : "Question 5?",
-        imgSrc : "img/js.png",
-        choiceA : "Wrong",
-        choiceB : "Corrrect",
-        choiceC : "Correct",
-        correct : "C",
+        question : "Do you feel as if you are in control of your emotions?",
+        imgSrc : "Images/Sad.png",
+        choiceA : "Yes, I feel in control.",
+        choiceB : "No, I'm not in control.",
+        correct : "B",
     },{
-        question : "Question 5?",
-        imgSrc : "img/js.png",
-        choiceA : "Wrong",
-        choiceB : "Corrrect",
-        choiceC : "Correct",
-        correct : "C",
+        question : "Do you feel overwhelmed with your emotions? ",
+        imgSrc : "Images/Anxious.png",
+        choiceA : "Yes, I feel overwhelmed",
+        choiceB : "No, I don't feel overwhelmed.",
+        correct : "A",
     },{
-        question : "Question 5?",
-        imgSrc : "img/js.png",
-        choiceA : "Wrong",
-        choiceB : "Corrrect",
-        choiceC : "Correct",
-        correct : "C",
+        question : "Do you think you are thinking clearly and able to make the right decisions?",
+        imgSrc : "Images/Stressed.png",
+        choiceA : "Yes, I'm thinking clearly.",
+        choiceB : "No, I'm not thinking clearly.",
+        correct : "B",
     },
     {
-        question : "Question 5?",
-        imgSrc : "img/js.png",
-        choiceA : "Wrong",
-        choiceB : "Corrrect",
-        choiceC : "Correct",
-        correct : "C",
+        question : "Are you feelings effecting others around you?",
+        imgSrc : "Images/Sad.png",
+        choiceA : "Yes, my feelings are effecting those around me.",
+        choiceB : "No, my feelings aren't effecting anyone but myself.",
+        correct : "A",
     },{
-        question : "Question 5?",
-        imgSrc : "img/js.png",
-        choiceA : "Wrong",
-        choiceB : "Corrrect",
-        choiceC : "Correct",
-        correct : "C",
+        question : "Is your mood effecting how you behave with people around you?",
+        imgSrc : "Images/Anxious.png",
+        choiceA : "Yes, I'm behaving differently with people around me.",
+        choiceB : "No, I'm behaving as I normally would.",
+        correct : "A",
+ 
+    },{
+        question : "Are your emotions effecting you to the point that you can't sleep?",
+        imgSrc : "Images/Stressed.png",
+        choiceA : "Yes, I've been struggling to sleep.",
+        choiceB : "No, my sleep hasn't been effected.",
+        correct : "A",
  
     }
 ];
 
-// create some variables
 
 const lastQuestion = questions.length - 1;
-let runningQuestion = 0;
-let count = 0;
-const questionTime = 15; // 10s
-const gaugeWidth = 150; // 150px
-const gaugeUnit = gaugeWidth / questionTime;
-let TIMER;
+let ongoingquestion = 0;
 let score = 0;
 
-// render a question
-function renderQuestion(){
-    let q = questions[runningQuestion];
+// create each question
+function SurveyQuestion(){
+    let q = questions[ongoingquestion];
     
     question.innerHTML = "<p>"+ q.question +"</p>";
-    qImg.innerHTML = "<img src="+ q.imgSrc +">";
+    QuestionImage.innerHTML = "<img src="+ q.imgSrc +">";
     choiceA.innerHTML = q.choiceA;
     choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
 }
 
-start.addEventListener("click",startQuiz);
+StartSurvey.addEventListener("click",startQuiz);
 
-// start quiz
+// start survey
 function startQuiz(){
-    start.style.display = "none";
-    renderQuestion();
-    quiz.style.display = "block";
-    renderProgress();
-    renderCounter();
-    TIMER = setInterval(renderCounter,1000); // 1000ms = 1s
+    StartSurvey.style.display = "none";
+    SurveyQuestion();
+    Survey.style.display = "block";
+    showProgress();
 }
 
-// render progress
-function renderProgress(){
+// show progress
+function showProgress(){
     for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
-        progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
+        SurveyProgress.innerHTML += "<div class='Progress' id="+ qIndex +"></div>";
     }
 }
 
@@ -101,51 +89,45 @@ function renderProgress(){
 // checkAnwer
 
 function checkAnswer(answer){
-    if( answer == questions[runningQuestion].correct){
+    if( answer == questions[ongoingquestion].correct){
         // answer is correct
         score++;
-        // change progress color to green
-        answerIsCorrect();
+
+        answerGood();
     }else{
-        // answer is wrong
-        // change progress color to red
-        answerIsWrong();
+
+        answerBad();
     }
-    count = 0;
-    if(runningQuestion < lastQuestion){
-        runningQuestion++;
-        renderQuestion();
+    if(ongoingquestion < lastQuestion){
+        ongoingquestion++;
+        SurveyQuestion();
     }else{
-        // end the quiz and show the score
-        clearInterval(TIMER);
-        scoreRender();
+        // end the Survey, provide mental health guidance
+        showOutcome();
     }
 }
 
 // answer is correct
-function answerIsCorrect(){
-    document.getElementById(runningQuestion).style.backgroundColor = "#f2958c";
+function answerGood(){
+    document.getElementById(ongoingquestion).style.backgroundColor = "#f2958c";
 }
 
 // answer is Wrong
-function answerIsWrong(){
-    document.getElementById(runningQuestion).style.backgroundColor = "#f2958c";
+function answerBad(){
+    document.getElementById(ongoingquestion).style.backgroundColor = "#f2958c";
 }
 
-// score render
-function scoreRender(){
-    scoreDiv.style.display = "block";
+// show score based on how questions were answered
+function showOutcome(){
+    Outcome.style.display = "block";
     
-    // calculate the amount of question percent answered by the user
-    const scorePerCent = Math.round(100 * score/questions.length);
+
+    const OutcomePercent = Math.round(100 * score/questions.length);
     
-    // choose the image based on the scorePerCent
-    let img = (scorePerCent >= 80) ? "img/5.png <p>And this!</p>" :
-              (scorePerCent >= 60) ? "img/4.png" :
-              (scorePerCent >= 40) ? "img/3.png" :
-              (scorePerCent >= 20) ? "img/2.png" :
-              "img/1.png";
+    // choose the message based on the OutcomePercent
+    let message = (OutcomePercent >= 66) ? "<p>We believe you are at a high risk and should seek support immediately.<br>There are services available to support you, such as the Samaritans, who are available 24/7.<br>If not, please contact a friend or family member who can support you.<br>https://www.samaritans.org/</p>" :
+              (OutcomePercent >= 33) ? "<p>We believe you are at a medium risk and should seek support from someone that you know and trust as soon as possible.<br>Communication is always the best way to work through your problems, and having someone to support you can be a huge relief.</p>" :
+              "<p>We believe you are a low risk, but that doesn't mean you shouldn't seek support.<br>Find someone that you trust to talk to, or do something that you know you enjoy to help your mood.</p>";
     
-    scoreDiv.innerHTML = "<img src="+ img +">";
-    scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
+    Outcome.innerHTML =  message ;
 }

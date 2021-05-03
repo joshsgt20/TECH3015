@@ -179,7 +179,8 @@ background-color: #375851;
   @media screen and (min-width: 1650px) {
 
     .BlogLink{
-      width: 30%;
+      width: 80%;
+      margin-left: 20%;
     }
 
 

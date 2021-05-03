@@ -92,24 +92,22 @@
     <h1>What do you need?</h1>
     <div id="SurveyContainer">
 
-        <div id="start"><h2>Take our short survey.</h2></div>
-        <div id="quiz" style="display: none">
-            <div id="question"></div>
-            <div id="qImg"></div>
-            <div id="choices">
-                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
-            </div>
-            <div id="timer">
-                <div id="counter"></div>
-                <div id="btimeGauge"></div>
-                <div id="timeGauge"></div>
-            </div>
-            <div id="progress"></div>
+      <div id="StartSurvey"><h2>Take our short survey.</h2></div>
+      <div id="Survey" style="display: none">
+        <div class="SurveyGrid">
+          <div id="QuestionImage" style="grid-area: SurveyPicture;"></div>
+          <div id="question" style="grid-area: SurveyQuestion;"></div>
+
         </div>
-        <div id="scoreContainer" style="display: none"></div>
+          <div id="choices">
+              <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+              <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+          </div>
+
+          <div id="SurveyProgress"></div>
       </div>
+      <div id="SurveyOutcome" style="display: none"></div>
+    </div>
     </section>
 
     <footer></footer>
