@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moods.</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS\style.css">
+    <link rel="stylesheet" href="CSS\apps.css">
+</head>
+<body>
+    <nav id="Menu">
+        <div id="Title">
+    <h1>Moods<span>.</span></h1></div>
+        <div class="Menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+
+            <div class="Dropdown_Menu">
+            <li class="DropButton"><a href="#">Moods</a></li>
+            <div class="dropdown-list">
+              <a href="Stressed.html">Stressed</a>
+              <a href="Anxiety.html">Anxious</a>
+              <a href="Happy.html">Happy</a>
+              <a href="Sad.html">Sad</a>
+              <a href="Angry.html">Angry</a>
+            </div>
+          </div>
+
+          <div class="Dropdown_Menu">
+            <li class="DropButton"><a href="#">Apps</a></li>
+            <div class="dropdown-list">
+              <a href="Moods To Do.html">Organise</a>
+              <a href="Moods Meditation.html">Meditate</a>
+              <a href="Moods Music.html">Create</a>
+              <a href="Moods Weather.html">Relax</a>
+              <a href="Moods Survey.html">Guidance</a>
+            </div>
+          </div>
+
+  
+
+            <li><a href="Moods Blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+  <section class="TopSection"><h1>Need a breather?</h1>
+  <p >If your feelings have gotten the best of you, and you feel that you're struggling to breathe or control your emotions, try a short meditation session.
+  </p>
+<p>Meditation is simple, and just involves you dedicating your mind to focus purely on breathing, which can help you overcome bursts of panic and anxiety.</p>
+<p>Our meditation app allows you to choose your time and backing sound (if you choose to have any), leaving you with the job of completely clearing your mind and getting 
+  back in control.
+</p></section>
+
+  <section class="MeditateSection">
+        <h1>Moods. Meditation</h1>
+  <div class="MeditationApp"  >
+
+    <div class="meditate-container" >
+      <div class="Meditate">
+      <div class="time-select" id="Application">
+        <button data-time="120"><h2>2 Minutes</h2></button>
+        <button data-time="300" class="medium-mins"><h2>5 Minutes</h2></button>
+        <button data-time="600" class="long-mins"><h2>10 Minutes</h2></button>
+      </div>
+      <div class="player-container">
+          <audio class="AudioTrack">
+              <source src="Audio\Meditation1.mp3" />
+            </audio>
+            <div class="audio-picker">
+              <button data-sound="Audio\Meditation2.mp3"><img src="icons\rain.svg" alt=""></button>
+              <button data-sound="Audio\Meditation1.mp3"><img src="icons\beach.svg" alt=""></button>
+            </div>
+            <div class="PauseContainer">
+            <img src="icons\play.svg" class="play"></img>
+            <svg class="track-outline" width="453" height="453" viewBox="0 0 453 453" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="226.5" cy="226.5" r="216.5" stroke="#3e4c65" stroke-width="20"/>
+              </svg>
+            <svg class="circle-fill" width="453" height="453" viewBox="0 0 453 453" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="226.5" cy="226.5" r="216.5" stroke="white" stroke-width="20" />
+              </svg>
+            <img src="icons\replay.svg" class="replay"></img>
+          </div>
+              <h1 class="time-display">0:00</h1>      
+    </div>
+
+  </div>
+</div>
+  </div>
+  </section>
+
+
+    <footer></footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" 
+    integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg==" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js" 
+    integrity="sha512-lJDBw/vKlGO8aIZB8/6CY4lV+EMAL3qzViHid6wXjH/uDrqUl+uvfCROHXAEL0T/bgdAQHSuE68vRlcFHUdrUw==" crossorigin="anonymous"></script>
+
+    <script src="JS\app.js"></script>
+    <script src="JS\animation.js"></script>
+    <script src="JS\meditation.js"></script>
+    
+</body>
+</html>

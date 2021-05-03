@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moods.</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS\style.css">
+    <link rel="stylesheet" href="CSS\apps.css">
+</head>
+<body>
+    <nav id="Menu">
+        <div id="Title">
+    <h1>Moods<span>.</span></h1></div>
+        <div class="Menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+
+            <div class="Dropdown_Menu">
+            <li class="DropButton"><a href="#">Moods</a></li>
+            <div class="dropdown-list">
+              <a href="Stressed.html">Stressed</a>
+              <a href="Anxiety.html">Anxious</a>
+              <a href="Happy.html">Happy</a>
+              <a href="Sad.html">Sad</a>
+              <a href="Angry.html">Angry</a>
+            </div>
+          </div>
+
+          <div class="Dropdown_Menu">
+            <li class="DropButton"><a href="#">Apps</a></li>
+            <div class="dropdown-list">
+              <a href="Moods To Do.html">Organise</a>
+              <a href="Moods Meditation.html">Meditate</a>
+              <a href="Moods Music.html">Create</a>
+              <a href="Moods Weather.html">Relax</a>
+              <a href="Moods Survey.html">Guidance</a>
+            </div>
+          </div>
+
+  
+
+            <li><a href="Moods Blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+  <section class="TopSection SurveyTop">
+    <div style="grid-area: SurveyText"><h1>Not sure what to do?</h1>
+
+    <p>Sometimes people are a lot better at giving advice than receiving it. And in a situation 
+      where you may need support, it might be helpful to receive a little push in the right direction.
+
+    </p>
+    <p>Out short survey will only take you a few seconds to complete, but just might give you advice or 
+      guidance on what to do next, should you need it. We only recommend if you're feeling a strong surge of emotions and 
+      are alone.
+    </p>
+  </div>
+
+<img src="Images\3811637.jpg" id="OtherImage" alt="" style="grid-area: SurveyImage">
+
+
+</section>
+<section style=" background-color: #3e4c65; color: white; text-align: center;">
+  <h1>What do you do next?</h1>
+    <div id="SurveyContainer">
+
+        <div id="StartSurvey"><h2>Take our short survey.</h2></div>
+        <div id="Survey" style="display: none">
+          <div class="SurveyGrid">
+            <div id="QuestionImage" style="grid-area: SurveyPicture;"></div>
+            <div id="question" style="grid-area: SurveyQuestion;"></div>
+
+          </div>
+            <div id="choices">
+                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+            </div>
+  
+            <div id="SurveyProgress"></div>
+        </div>
+        <div id="SurveyOutcome" style="display: none"></div>
+      </div>
+      
+    </section>
+
+    <footer></footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" 
+    integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg==" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js" 
+    integrity="sha512-lJDBw/vKlGO8aIZB8/6CY4lV+EMAL3qzViHid6wXjH/uDrqUl+uvfCROHXAEL0T/bgdAQHSuE68vRlcFHUdrUw==" crossorigin="anonymous"></script>
+
+    <script src="JS\app.js"></script>
+    <script src="JS\animation.js"></script>
+    <script src="JS\survey.js"></script>
+    
+    
+    
+    
+</body>
+</html>

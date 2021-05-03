@@ -1,0 +1,188 @@
+.BlogPostContent img{
+  border-radius: 2%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.473), 0px 0px 10px rgba(0, 0, 0, 0.37);
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+#Title, footer{
+  background-color: #375851;
+}
+
+
+.BlogIntro{
+  padding-top: 8vh;
+}
+
+
+
+.BlogPosts{
+  background-color: #375851;
+  color: white;
+
+}
+
+
+.BlogLink{
+  background-color: white;
+  color: black;
+  width: 70%;
+  height: auto;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.473), 0px 0px 20px rgba(0, 0, 0, 0.37);
+  margin: 5% 0% 10% 15%;
+  border-radius: 2%;
+
+}
+.BlogLink a{
+  text-decoration: none;
+  color: black
+}
+
+.BlogLink img{
+  width: 98%;
+  margin: 1%;
+  min-height: 20vh;
+  object-fit: cover;
+  border-radius: 2%;
+
+
+}
+
+.BlogLink:hover{
+  transform: scale(1.03);
+  transition: 0.3s;
+}
+.PostContainer{
+  width: 100%;
+  justify-content: center;
+}
+
+nav{
+  background-color: #375851;
+}
+
+.nav-links{
+  background-color: #375851;
+}
+
+
+.SocialMedia2{
+  background-color: #f2958c;
+
+}
+
+.MoodsSocials{
+  background-color: #f2958c;
+}
+
+
+.SocialMedia2 .fa {
+  background-color: #375851;
+  color: #ffffff;  
+  border: 0.3vh solid #375851;
+
+}
+.SocialMedia2 .fa:hover {
+  background-color: #ffffff;
+  color: #375851;
+
+
+}
+
+
+.dropdown-list a{
+background-color: #375851;
+}
+
+/* Tablet Screen size */
+@media screen and (min-width: 650px){
+
+  .BlogIntro{
+    padding-top: 12vh;
+  }
+
+
+  .BlogPosts{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "BlogText BlogPosts";
+    align-items: center;
+
+  }
+  
+  .BlogLink{
+    width: 70%;
+    margin: 2% 0% 5% 15%;
+  }
+  
+  .PostContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+.PostContainer{
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+/* Laptop Screen size */
+@media screen and (min-width: 1000px) {
+
+  .BlogPostContent{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "BlogPostText1 BlogPostImage"
+    "BlogPostText2 BlogPostText2";
+    align-items: center;
+  }
+  }
+  }
+  
+  
+  
+  @media screen and (min-width: 1200px) {
+
+    .BlogLink{
+      width: 85%;
+    }
+    
+
+    .BlogLink img{
+      width: 98%;
+      margin: 1%;
+      object-fit: cover;
+    
+    
+    }
+
+    .BlogPosts{
+      padding-top: 12vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: "BlogText BlogText BlogPosts";
+    }
+
+  }
+  
+  
+  
+  
+  
+  /* Desktop Screen size */
+  @media screen and (min-width: 1650px) {
+
+    .BlogLink{
+      width: 80%;
+      margin-left: 20%;
+    }
+
+
+
+  }

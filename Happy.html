@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moods.</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS\style.css">
+    <link rel="stylesheet" href="CSS\apps.css">
+</head>
+<body>
+    <nav id="Menu">
+        <div id="Title">
+    <h1>Moods<span>.</span></h1></div>
+        <div class="Menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+
+            <div class="Dropdown_Menu">
+            <li class="DropButton"><a href="#">Moods</a></li>
+            <div class="dropdown-list">
+              <a href="Stressed.html">Stressed</a>
+              <a href="Anxiety.html">Anxious</a>
+              <a href="Happy.html">Happy</a>
+              <a href="Sad.html">Sad</a>
+              <a href="Angry.html">Angry</a>
+            </div>
+          </div>
+
+          <div class="Dropdown_Menu">
+            <li class="DropButton"><a href="#">Apps</a></li>
+            <div class="dropdown-list">
+              <a href="Moods To Do.html">Organise</a>
+              <a href="Moods Meditation.html">Meditate</a>
+              <a href="Moods Music.html">Create</a>
+              <a href="Moods Weather.html">Relax</a>
+              <a href="Moods Survey.html">Guidance</a>
+            </div>
+          </div>
+
+  
+
+            <li><a href="Moods Blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <section class="TopSection MoodAbout">
+      <div style="grid-area: MoodText">
+      <h1>Happy</h1> 
+    <p>It's great when you feel happy, and people often can take it for granted, not truly appreciating the way that they are feeling.</p>
+    <p>We want everyones happiness to last as long as possible, as life's too short to not be, and to do so we need to truly understand our feelings.</p>
+  </div>
+  <img src="Images\Happy.png" id="FaceAnimation" class="MoodFace" alt="">
+  
+  
+  
+  
+  </section>
+  
+  <section class="HappyAbout">
+    <div style="grid-area: Stats">
+    <h2>What lead to this?</h2>
+    <p>When you feel better, try to think about what it is that made you feel better. Did you spend time with friends or family? Submit 
+      an assignment? Got a new job? 
+  </p>
+  <p>The point is to savour these moments, and try to continue doing things that excite us and that we enjoy.</p>
+  </div>
+    <img src="Images\Happy graphic.jpg" id="OtherImage" style="grid-area: StatsImage" alt="">
+    <div style="grid-area: HowToDeal">  
+      <h2>Continue with positivity</h2>
+  <p>Going forward, try and stay positive.</p>
+<p>Keep doing things that make you happy, try new experiences to test yourself, and most importantly, try to share you happiness with others.</p>
+<p>Sometimes something very simple is enough to make someones day. Try to think about how you would feel if someone went out of their way for you, and 
+  reflect this in your actions.
+</p></div>
+  </section>
+  
+  
+   
+  <section class="MusicApp" id="Application">
+    <h1>Moods. Music</h1>
+      <h2>What do you enjoy?</h2>
+
+    <div class="AudioBall"></div>
+    <div class="AudioKeys">
+      <div class="Key1">
+        <audio src="Audio\Sound1.mp3" class="Audio"></audio>
+      </div>
+      <div class="Key2">
+        <audio class="Audio">
+          <source src="Audio\Sound2.mp3" />
+        </audio>
+      </div>
+      <div class="Key3">
+        <audio class="Audio">
+          <source src="Audio\Sound3.mp3" />
+        </audio>
+      </div>
+      <div class="Key4">
+        <audio class="Audio">
+          <source src="Audio\Sound4.mp3" />
+        </audio>
+      </div>
+      <div class="Key5">
+        <audio class="Audio">
+          <source src="Audio\Sound5.mp3" />
+        </audio>
+      </div>
+      <div class="Key6">
+        <audio class="Audio">
+          <source src="Audio\Sound6.mp3" />
+        </audio>
+      </div>
+    </div>
+  </section>
+
+  
+    <footer></footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" 
+    integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg==" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js" 
+    integrity="sha512-lJDBw/vKlGO8aIZB8/6CY4lV+EMAL3qzViHid6wXjH/uDrqUl+uvfCROHXAEL0T/bgdAQHSuE68vRlcFHUdrUw==" crossorigin="anonymous"></script>
+    <script src="JS\app.js"></script>
+    <script src="JS\animation.js"></script>
+    <script src="JS\music.js"></script>
+    
+</body>
+</html>
