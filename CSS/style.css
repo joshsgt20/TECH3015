@@ -420,12 +420,6 @@ transform: scale(1.1);
   margin: 2vh 0vw 2vh 10vw
 }
 
- .SocialMedia2{
-  background-color: #3e4c65;
-    color: white
-
-}
-
 
 
 .SocialMedia2 {
@@ -434,6 +428,8 @@ transform: scale(1.1);
   width: 80%;
   justify-content: space-around;
   margin: 5% 0% 5% 10%;
+  background-color: #3e4c65;
+  color: white;
 }
 
 .SocialMedia2 .fa {
@@ -737,10 +733,11 @@ border: 0.5vh solid #3e4c65;
 .FaceShadow img{
   width: 100%;
   height: auto;
-  object-fit: fit;
+  object-fit: cover;
   z-index: 2;
   transition: all 0.5s ease-out;
   border-radius: 50%;
+
 
   
 }
